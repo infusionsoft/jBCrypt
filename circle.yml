@@ -20,5 +20,7 @@ deployment:
   release:
     tag: /v[0-9]+(\.[0-9]+)*-is/
     commands:
+      - git tag -d $CIRCLE_TAG
+      - git fetch origin
       - git checkout $CIRCLE_TAG
       - mvn deploy
