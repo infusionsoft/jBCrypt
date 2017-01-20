@@ -7,6 +7,8 @@ machine:
     version: oraclejdk7
 
 dependencies:
+  override:
+    - mvn dependency:tree
   pre:
     - curl "https://storage.googleapis.com/circle-scripts/latest/init.sh" | bash
 
